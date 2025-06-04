@@ -20,7 +20,7 @@ A Streamlit web application for uploading PDF files, generating clinical summari
 How to run:
 `streamlit run streamlit.py`
 
-evaluation.py
+`evaluation.py`
 A script for automated evaluation of different LLM summarization models on a clinical dataset. It uses Weave’s evaluation framework, computes ROUGE-L scores, and leverages hallucination and summarization scorers. Results are logged for comparison across models.
 
 How to run:
