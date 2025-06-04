@@ -2,9 +2,13 @@ This project provides a streamlit-powered web interface to parse PDF files and g
 
 ## Setup
 Create .env file with your API keys:
+
 OPENAI_API_KEY=your_openai_api_key
-ANTHROPIC_API_KEY=your_aws_access_key  # If using AWS Bedrock
+
+ANTHROPIC_API_KEY=your_aws_access_key 
+
 WANDB_API_KEY=your_wandb_api_key 
+
 WANDB_ENTITY=your_wandb_team_name
 
 ## Use
