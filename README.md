@@ -15,10 +15,9 @@ WANDB_API_KEY=your_wandb_api_key
 WANDB_ENTITY=your_wandb_team_name
 ```
 
-Install dependencies (recommended: use a conda environment):
+Install dependencies:
 
 ```bash
-conda activate pdf_summarizer_env
 pip install -r requirements.txt
 ```
 
