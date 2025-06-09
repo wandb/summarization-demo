@@ -1,5 +1,4 @@
 import streamlit as st
-import PyPDF2
 import asyncio
 import weave
 from typing import List
@@ -7,9 +6,18 @@ import json
 from pathlib import Path
 from model import parse_pdf, ChatModel, AuthoringModel, predict
 import wandb
+from dotenv import load_dotenv
+import os
 
-# Initialize Weave (make sure this project is set up for summarization + feedback)
-weave.init("smle-demo/summarization-app")
+load_dotenv(".env")
+
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["ANTHROPIC_API_KEY"] = os.getenv("ANTHROPIC_API_KEY")
+os.environ["WANDB_API_KEY"] = os.getenv("WANDB_API_KEY")
+os.environ["WANDB_ENTITY"] = os.getenv("WANDB_ENTITY")
+
+# Initialize Weave
+weave.init(f"{os.environ['WANDB_ENTITY']}/summarization-app")
 
 def init_session_state():
     """Initialize session state keys."""
@@ -142,4 +150,9 @@ Ensure the report adheres to clinical best practices and is structured logically
         display_summaries()
 
 if __name__ == "__main__":
+    load_dotenv(".env")
+    os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+    os.environ["ANTHROPIC_API_KEY"] = os.getenv("ANTHROPIC_API_KEY")
+    os.environ["WANDB_API_KEY"] = os.getenv("WANDB_API_KEY")
+
     main()
